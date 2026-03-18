@@ -1,38 +1,85 @@
 (() => {
+  const PROJECT_TAG_LIBRARY = {
+    ROBOTICS: 'Robotics',
+    EMBEDDED: 'Embedded Systems',
+    REINFORCEMENT_LEARNING: 'Reinforcement Learning',
+    SIM2REAL: 'Sim2Real',
+    DEPLOYMENT: 'Deployment',
+    FREERTOS: 'FreeRTOS',
+    MOTION_CONTROL: 'Motion Control',
+    MOTOR_CONTROL: 'Motor Control',
+    SLAM: 'SLAM',
+    LIDAR: 'LiDAR',
+    MECHANICAL_DESIGN: 'Mechanical Design',
+    UNDERWATER_ROBOTICS: 'Underwater Robotics',
+    VECTOR_PROPULSION: 'Vector Propulsion',
+    WATERPROOF_ENGINEERING: 'Waterproof Engineering',
+    AGRICULTURAL_ROBOTICS: 'Agricultural Robotics',
+    MULTI_ROBOT_COLLABORATION: 'Multi-Robot Collaboration',
+  };
+
   const PROJECTS = [
     {
-      img: 'assets/images/Portfolio-01.png',
+      img: 'assets/images/opendog-cover.png',
       titleKey: 'projects.item1.title',
       descKey: 'projects.item1.desc',
-      tagsKey: 'projects.item1.tags',
+      tags: [
+        PROJECT_TAG_LIBRARY.ROBOTICS,
+        PROJECT_TAG_LIBRARY.REINFORCEMENT_LEARNING,
+        PROJECT_TAG_LIBRARY.SIM2REAL,
+        PROJECT_TAG_LIBRARY.DEPLOYMENT,
+      ],
       link: 'pages/projects/project1.html',
     },
     {
-      img: 'assets/images/Portfolio-02.png',
+      img: 'assets/images/robocon-cover.png',
       titleKey: 'projects.item2.title',
       descKey: 'projects.item2.desc',
-      tagsKey: 'projects.item2.tags',
+      tags: [
+        PROJECT_TAG_LIBRARY.ROBOTICS,
+        PROJECT_TAG_LIBRARY.MOTION_CONTROL,
+        PROJECT_TAG_LIBRARY.SLAM,
+        PROJECT_TAG_LIBRARY.LIDAR,
+        PROJECT_TAG_LIBRARY.MECHANICAL_DESIGN,
+      ],
       link: 'pages/projects/project2.html',
     },
     {
-      img: 'assets/images/Portfolio-03.png',
+      img: 'assets/images/lobster-cover.png',
       titleKey: 'projects.item3.title',
       descKey: 'projects.item3.desc',
-      tagsKey: 'projects.item3.tags',
+      tags: [
+        PROJECT_TAG_LIBRARY.UNDERWATER_ROBOTICS,
+        PROJECT_TAG_LIBRARY.EMBEDDED,
+        PROJECT_TAG_LIBRARY.VECTOR_PROPULSION,
+        PROJECT_TAG_LIBRARY.WATERPROOF_ENGINEERING,
+      ],
       link: 'pages/projects/project3.html',
+    },
+    {
+      img: 'assets/images/agri-cover.png',
+      titleKey: 'projects.item4.title',
+      descKey: 'projects.item4.desc',
+      tags: [
+        PROJECT_TAG_LIBRARY.AGRICULTURAL_ROBOTICS,
+        PROJECT_TAG_LIBRARY.FREERTOS,
+        PROJECT_TAG_LIBRARY.MOTOR_CONTROL,
+        PROJECT_TAG_LIBRARY.MULTI_ROBOT_COLLABORATION,
+      ],
+      link: 'pages/projects/project4.html',
     },
   ];
 
   const OPEN_SOURCE_ITEMS = [
+    { key: 'opensource.item9', linkCode: 'https://github.com/Lain-Ego0/LocoWiki', linkDoc: null },
     { key: 'opensource.item1', linkCode: 'https://github.com/Lain-Ego0/BRS-Parallel-Robot', linkDoc: null },
     { key: 'opensource.item2', linkCode: 'https://github.com/Lain-Ego0/SliverWolf-ArmRobotDog', linkDoc: null },
     { key: 'opensource.item3', linkCode: null, linkDoc: 'https://wcn9j5638vrr.feishu.cn/wiki/space/7570988375279517715' },
     { key: 'opensource.item4', linkCode: 'https://github.com/Lain-Ego0/ROBOCON2024-R1', linkDoc: null },
     { key: 'opensource.item5', linkCode: 'https://github.com/Lain-Ego0/ROBOCON2024-3508DOG', linkDoc: null },
-    { key: 'opensource.item6', linkCode: 'https://github.com/Lain-Ego0/HTDW4438_Isaacgym', linkDoc: null },
+    { key: 'opensource.item6', linkCode: 'https://github.com/Lain-Ego0/HTDW4438_HIMloco', linkDoc: null },
     { key: 'opensource.item7', linkCode: 'https://github.com/Lain-Ego0/HTDW4438-OpenDog', linkDoc: null },
-    { key: 'opensource.item8', linkCode: 'https://github.com/Lain-Ego0/Lain-s-Note', linkDoc: null },
-    { key: 'opensource.item9', linkCode: 'https://github.com/Lain-Ego0/Lain-s-PDF2PNG', linkDoc: null },
+    { key: 'opensource.item8', linkCode: 'https://github.com/Lain-Ego0/ROBOCON2024-PPS', linkDoc: null },
   ];
 
   const TIMELINE_EVENTS = [
@@ -154,7 +201,7 @@
     clear(grid);
 
     PROJECTS.forEach((project) => {
-      const tagsHtml = renderProjectTags(t(project.tagsKey));
+      const tagsHtml = renderProjectTags(project.tags);
 
       const card = document.createElement('div');
       card.className = 'card';
@@ -243,14 +290,20 @@
   }
 
   function initContactLinks() {
-    const container = qs('.contact-links');
+    const container = qs('.intro-contact-links');
     if (!container) return;
     clear(container);
 
     CONTACT_LINKS.forEach((contact) => {
-      const item = document.createElement('div');
-      item.className = 'contact-item';
-      item.innerHTML = `<a href="${contact.link}" target="_blank" rel="noopener noreferrer"><i class="${contact.icon}"></i><p>${t(contact.key)}</p></a>`;
+      const label = t(contact.key);
+      const item = document.createElement('a');
+      item.className = 'intro-contact-link';
+      item.href = contact.link;
+      item.target = '_blank';
+      item.rel = 'noopener noreferrer';
+      item.title = label;
+      item.setAttribute('aria-label', label);
+      item.innerHTML = `<i class="${contact.icon}"></i>`;
       container.appendChild(item);
     });
   }
@@ -280,6 +333,45 @@
     });
   }
 
+  function initRevealMotion() {
+    const targets = [
+      ...qsa('.project-detail-card'),
+      ...qsa('.projects-grid .card'),
+      ...qsa('.opensource-grid .os-card'),
+      ...qsa('.timeline-container .timeline-item'),
+      ...qsa('.skills-wrapper .skill-category'),
+    ];
+
+    if (!targets.length) return;
+
+    const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    targets.forEach((el, index) => {
+      el.classList.add('reveal');
+      el.style.setProperty('--reveal-delay', `${(index % 6) * 60}ms`);
+    });
+
+    if (reducedMotion || typeof IntersectionObserver === 'undefined') {
+      targets.forEach((el) => el.classList.add('is-visible'));
+      return;
+    }
+
+    const observer = new IntersectionObserver(
+      (entries, obs) => {
+        entries.forEach((entry) => {
+          if (!entry.isIntersecting) return;
+          entry.target.classList.add('is-visible');
+          obs.unobserve(entry.target);
+        });
+      },
+      {
+        threshold: 0.12,
+        rootMargin: '0px 0px -8% 0px',
+      },
+    );
+
+    targets.forEach((el) => observer.observe(el));
+  }
+
   document.addEventListener('DOMContentLoaded', () => {
     initThemeToggle();
     initLangToggle();
@@ -293,5 +385,6 @@
     initTimeline();
     initTechStack();
     initContactLinks();
+    initRevealMotion();
   });
 })();
