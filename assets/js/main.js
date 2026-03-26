@@ -3,7 +3,7 @@
     ROBOTICS: 'Robotics',
     EMBEDDED: 'Embedded Systems',
     REINFORCEMENT_LEARNING: 'Reinforcement Learning',
-    SIM2REAL: 'Sim2Real',
+    SIM2REAL: 'Sim2Real',F
     DEPLOYMENT: 'Deployment',
     FREERTOS: 'FreeRTOS',
     MOTION_CONTROL: 'Motion Control',
@@ -83,10 +83,7 @@
   ];
 
   const TIMELINE_EVENTS = [
-    'timeline.event9',
-    'timeline.event8',
-    'timeline.event7',
-    'timeline.event6',
+    // 'timeline.event6',
     'timeline.event5',
     'timeline.event4',
     'timeline.event3',
