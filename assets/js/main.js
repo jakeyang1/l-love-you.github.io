@@ -3,7 +3,7 @@
     ROBOTICS: 'Robotics',
     EMBEDDED: 'Embedded Systems',
     REINFORCEMENT_LEARNING: 'Reinforcement Learning',
-    SIM2REAL: 'Sim2Real',F
+    SIM2REAL: 'Sim2Real',
     DEPLOYMENT: 'Deployment',
     FREERTOS: 'FreeRTOS',
     MOTION_CONTROL: 'Motion Control',
