@@ -1,8 +1,8 @@
 {
   "nav": {
     "home": "首页",
-    "projects": "个人项目",
-    "opensource": "开源贡献",
+    "projects": "实战与自动化方案",
+    "opensource": "知识沉淀",
     "timeline": "时间轴",
     "skills": "技术栈",
     "contact": "联系我",
@@ -14,29 +14,30 @@
     "desc": "计算机科学专业，就业已有3年，目前于联想新视界北京有限公司担任系统运维工程师<br>擅长包括Linux,桌面技术,服务器相关的技术支持<br>致力于向数据中心架构师进阶，持续钻研云原生与自动化技术<br>邮箱：3133549614@qq.com"
   },
   "projects": {
-    "title": "个人项目",
-    "imgAlt": "项目图片",
+    "title": "实践与自动化方案",
+    "imgAlt": "项目示意图",
     "viewDetail": "查看详情",
     "item1": {
-      "title": "HTDW4438 OpenDog 四足机器人",
-      "desc": "全栈开源四足机器人项目，覆盖机械结构与URDF建模、Isaac Gym强化学习训练到Sim2Real实机部署。以HTDW4438-OpenDog主仓为核心，并与HTDW4438-AMP、HTDW4438_HIMloco、HTDW4438_Isaacgym协同形成完整研发闭环。",
-      "tags": ["Robotics", "Reinforcement Learning", "Sim2Real", "Deployment"]
+      "title": "企业级自动化巡检脚本库",
+      "desc": "针对机房服务器日常运维痛点，使用 Shell 编写的自动化巡检工具集。实现对系统资源、核心服务进程的批量巡检与异常过滤，大幅提升日常巡检效率。",
+      "tags": ["Linux", "Shell Script", "Automation", "监控运维"]
     },
     "item2": {
-      "title": "ROBOCON 2025 足式机器人",
-      "desc": "2025赛季ROBOCON足式机器人全栈研发。负责从类植保无人机碳管装配工艺机械建模、力控制算法到3D雷达建图自主导航技术。带领团队在全国180余支队伍中取得竞速赛第30名、障碍赛第31名、越野赛34名的优异成绩。",
-      "tags": ["Robotics", "Motion Control", "SLAM", "LiDAR", "Mechanical Design"]
+      "title": "基于 Docker 的轻量级测试环境搭建",
+      "desc": "为深入理解云原生基础，在本地构建的微型容器化高可用架构。实践了容器编排、网络隔离、卷挂载持久化等核心特性，为后续进阶数据中心架构打下基础。",
+      "tags": ["Docker", "Homelab", "云原生基础", "网络配置"]
     },
     "item3": {
-      "title": "仿生波士顿大龙虾潜航机器人",
-      "desc": "浮力可控多自由度龙虾水下机器人。负责控制系统开发（步进蠕动泵、电机/舵机驱动、陀螺仪融合、IIC编码器闭环），设计异形多旋翼矢量推进模型实现全向移动。硬件方面负责驱动选型与防水设计。获福建省大学生智能海洋装备大赛特等奖。",
-      "tags": ["Underwater Robotics", "Embedded Systems", "Vector Propulsion", "Waterproof Engineering"]
+      "title": "企业终端与网络标准化管理方案",
+      "desc": "结合日常运维支持经验，提炼总结的办公网络优化与终端设备统管方案。涵盖系统批量部署思路、网络打印机统一配置及基础安全访问控制。",
+      "tags": ["IT Infrastructure", "桌面技术", "标准化流程", "网络排障"]
     },
     "item4": {
-      "title": "智能插秧收获一体机器人",
-      "desc": "基于FreeRTOS的智能插秧收获农业机器人。通过控制DJI3508电机完成夹爪抬升与全向底盘控制，定位精度±5mm。参与气路设计与硬件布线，支持双机器人协同作业。",
-      "tags": ["Agricultural Robotics", "FreeRTOS", "Motor Control", "Multi-Robot Collaboration"]
+      "title": "个人技术Wiki与知识库建设",
+      "desc": "基于轻量级框架搭建的个人技术知识管理库。系统性记录和沉淀Linux底层原理、网络通信协议栈、以及日常踩坑排障指南，构建个人的外脑。",
+      "tags": ["Knowledge Base", "Markdown", "技术沉淀", "持续学习"]
     }
+  },
   },
   "project1": {
     "title": "HTDW4438 OpenDog 四足机器人",
