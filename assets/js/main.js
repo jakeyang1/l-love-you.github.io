@@ -1,20 +1,22 @@
 (() => {
+  // 帮你把项目标签也改成了运维专属标签
   const PROJECT_TAG_LIBRARY = {
-    ROBOTICS: 'Robotics',
-    REINFORCEMENT_LEARNING: 'Reinforcement Learning',
-    SIM2REAL: 'Sim2Real',
-    DEPLOYMENT: 'Deployment',
-    FREERTOS: 'FreeRTOS',
-    MOTION_CONTROL: 'Motion Control',
-    MOTOR_CONTROL: 'Motor Control',
-    SLAM: 'SLAM',
-    LIDAR: 'LiDAR',
-    MECHANICAL_DESIGN: 'Mechanical Design',
-    UNDERWATER_ROBOTICS: 'Underwater Robotics',
-    VECTOR_PROPULSION: 'Vector Propulsion',
-    WATERPROOF_ENGINEERING: 'Waterproof Engineering',
-    AGRICULTURAL_ROBOTICS: 'Agricultural Robotics',
-    MULTI_ROBOT_COLLABORATION: 'Multi-Robot Collaboration',
+    LINUX: 'Linux',
+    SHELL: 'Shell Script',
+    AUTOMATION: 'Automation',
+    MONITORING: '监控运维',
+    DOCKER: 'Docker',
+    HOMELAB: 'Homelab',
+    CLOUD_NATIVE: '云原生基础',
+    NETWORK: '网络配置',
+    IT_INFRA: 'IT Infrastructure',
+    DESKTOP: '桌面技术',
+    STANDARDIZATION: '标准化流程',
+    TROUBLESHOOTING: '网络排障',
+    KNOWLEDGE_BASE: 'Knowledge Base',
+    MARKDOWN: 'Markdown',
+    TECH_NOTES: '技术沉淀',
+    CONTINUOUS_LEARNING: '持续学习'
   };
 
   const PROJECTS = [
@@ -22,63 +24,38 @@
       img: 'assets/images/opendog-cover.png',
       titleKey: 'projects.item1.title',
       descKey: 'projects.item1.desc',
-      tags: [
-        PROJECT_TAG_LIBRARY.ROBOTICS,
-        PROJECT_TAG_LIBRARY.REINFORCEMENT_LEARNING,
-        PROJECT_TAG_LIBRARY.SIM2REAL,
-        PROJECT_TAG_LIBRARY.DEPLOYMENT,
-      ],
+      tags: [PROJECT_TAG_LIBRARY.LINUX, PROJECT_TAG_LIBRARY.SHELL, PROJECT_TAG_LIBRARY.AUTOMATION, PROJECT_TAG_LIBRARY.MONITORING],
       link: 'pages/projects/project1.html',
     },
     {
       img: 'assets/images/robocon-cover.png',
       titleKey: 'projects.item2.title',
       descKey: 'projects.item2.desc',
-      tags: [
-        PROJECT_TAG_LIBRARY.ROBOTICS,
-        PROJECT_TAG_LIBRARY.MOTION_CONTROL,
-        PROJECT_TAG_LIBRARY.SLAM,
-        PROJECT_TAG_LIBRARY.LIDAR,
-        PROJECT_TAG_LIBRARY.MECHANICAL_DESIGN,
-      ],
+      tags: [PROJECT_TAG_LIBRARY.DOCKER, PROJECT_TAG_LIBRARY.HOMELAB, PROJECT_TAG_LIBRARY.CLOUD_NATIVE, PROJECT_TAG_LIBRARY.NETWORK],
       link: 'pages/projects/project2.html',
     },
     {
       img: 'assets/images/lobster-cover.png',
       titleKey: 'projects.item3.title',
       descKey: 'projects.item3.desc',
-      tags: [
-        PROJECT_TAG_LIBRARY.UNDERWATER_ROBOTICS,
-        PROJECT_TAG_LIBRARY.EMBEDDED,
-        PROJECT_TAG_LIBRARY.VECTOR_PROPULSION,
-        PROJECT_TAG_LIBRARY.WATERPROOF_ENGINEERING,
-      ],
+      tags: [PROJECT_TAG_LIBRARY.IT_INFRA, PROJECT_TAG_LIBRARY.DESKTOP, PROJECT_TAG_LIBRARY.STANDARDIZATION, PROJECT_TAG_LIBRARY.TROUBLESHOOTING],
       link: 'pages/projects/project3.html',
     },
     {
       img: 'assets/images/agri-cover.png',
       titleKey: 'projects.item4.title',
       descKey: 'projects.item4.desc',
-      tags: [
-        PROJECT_TAG_LIBRARY.AGRICULTURAL_ROBOTICS,
-        PROJECT_TAG_LIBRARY.FREERTOS,
-        PROJECT_TAG_LIBRARY.MOTOR_CONTROL,
-        PROJECT_TAG_LIBRARY.MULTI_ROBOT_COLLABORATION,
-      ],
+      tags: [PROJECT_TAG_LIBRARY.KNOWLEDGE_BASE, PROJECT_TAG_LIBRARY.MARKDOWN, PROJECT_TAG_LIBRARY.TECH_NOTES, PROJECT_TAG_LIBRARY.CONTINUOUS_LEARNING],
       link: 'pages/projects/project4.html',
     },
   ];
 
+  // 这里修改为只有4个知识库项目，彻底解决乱码问题！
   const OPEN_SOURCE_ITEMS = [
-    { key: 'opensource.item9', linkCode: 'https://github.com/Lain-Ego0/LocoWiki', linkDoc: null },
-    { key: 'opensource.item1', linkCode: 'https://github.com/Lain-Ego0/BRS-Parallel-Robot', linkDoc: null },
-    { key: 'opensource.item2', linkCode: 'https://github.com/Lain-Ego0/SliverWolf-ArmRobotDog', linkDoc: null },
-    { key: 'opensource.item3', linkCode: null, linkDoc: 'https://wcn9j5638vrr.feishu.cn/wiki/space/7570988375279517715' },
-    { key: 'opensource.item4', linkCode: 'https://github.com/Lain-Ego0/ROBOCON2024-R1', linkDoc: null },
-    { key: 'opensource.item5', linkCode: 'https://github.com/Lain-Ego0/ROBOCON2024-3508DOG', linkDoc: null },
-    { key: 'opensource.item6', linkCode: 'https://github.com/Lain-Ego0/HTDW4438_HIMloco', linkDoc: null },
-    { key: 'opensource.item7', linkCode: 'https://github.com/Lain-Ego0/HTDW4438-OpenDog', linkDoc: null },
-    { key: 'opensource.item8', linkCode: 'https://github.com/Lain-Ego0/ROBOCON2024-PPS', linkDoc: null },
+    { key: 'opensource.item1', linkCode: null, linkDoc: '#' },
+    { key: 'opensource.item2', linkCode: null, linkDoc: '#' },
+    { key: 'opensource.item3', linkCode: null, linkDoc: '#' },
+    { key: 'opensource.item4', linkCode: null, linkDoc: '#' },
   ];
 
   const TIMELINE_EVENTS = [
@@ -89,39 +66,40 @@
     'timeline.event1',
   ];
 
+  // 这里替换为你专属的系统运维技术栈！
   const TECH_STACK = [
     {
-      category: 'skills.embedded',
+      category: 'skills.os',
       items: [
-        { name: 'STM32', icon: 'fas fa-microchip' },
-        { name: 'ESP32', icon: 'fas fa-wifi' },
-        { name: 'FreeRTOS', icon: 'fas fa-cogs' },
-        { name: 'C/C++', icon: 'fas fa-code' },
-      ],
-    },
-    {
-      category: 'skills.robotics',
-      items: [
-        { name: 'ROS/ROS2', icon: 'fas fa-robot' },
-        { name: 'Gazebo', icon: 'fas fa-cube' },
-        { name: 'Motion Control', icon: 'fas fa-wave-square' },
-        { name: 'RL', icon: 'fas fa-brain' },
-      ],
-    },
-    {
-      category: 'skills.hardware',
-      items: [
-        { name: 'Altium', icon: 'fas fa-pencil-ruler' },
-        { name: 'SolidWorks', icon: 'fas fa-drafting-compass' },
-        { name: 'PCB', icon: 'fas fa-layer-group' },
-      ],
-    },
-    {
-      category: 'skills.software',
-      items: [
-        { name: 'Linux', icon: 'fab fa-linux' },
+        { name: 'Linux (CentOS/Ubuntu)', icon: 'fab fa-linux' },
+        { name: 'Windows Server', icon: 'fab fa-windows' },
+        { name: 'Shell Script', icon: 'fas fa-terminal' },
         { name: 'Python', icon: 'fab fa-python' },
+      ],
+    },
+    {
+      category: 'skills.infrastructure',
+      items: [
+        { name: 'TCP/IP & DNS', icon: 'fas fa-network-wired' },
+        { name: 'Nginx / Apache', icon: 'fas fa-server' },
+        { name: 'MySQL / Redis', icon: 'fas fa-database' },
+        { name: 'Active Directory', icon: 'fas fa-users-cog' },
+      ],
+    },
+    {
+      category: 'skills.cloud',
+      items: [
+        { name: 'Docker', icon: 'fab fa-docker' },
+        { name: 'VMware / ESXi', icon: 'fas fa-layer-group' },
+        { name: 'PXE / Kickstart', icon: 'fas fa-shipping-fast' },
+      ],
+    },
+    {
+      category: 'skills.tools',
+      items: [
+        { name: 'Zabbix / Prometheus', icon: 'fas fa-chart-line' },
         { name: 'Git', icon: 'fab fa-git-alt' },
+        { name: 'Wireshark', icon: 'fas fa-search-location' },
       ],
     },
   ];
